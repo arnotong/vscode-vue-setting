@@ -17,9 +17,9 @@
     "window.zoomLevel": 0, //视窗缩放
     "editor.renderWhitespace": "all", // 显示空格,写代码嘛,显示空格舒服,区分tab和空格 ,''和 ' '
     "workbench.activityBar.visible": true, // 显示右侧快捷菜单 alt+shift+. 切换
-    "editor.minimap.enabled": false, // 不显示右侧 minimap
+    "editor.minimap.enabled": true, // 不显示右侧 minimap
     "workbench.statusBar.visible": true, // 显示状态条
-    "window.menuBarVisibility": "toggle", //隐藏菜单栏
+    // "window.menuBarVisibility": "toggle", //隐藏菜单栏
     "explorer.openEditors.visible": 0, //最近打开的文件不显示
     // 4- Emmet 配置----------------------------------------------
     "emmet.triggerExpansionOnTab": true, // tab扩展标签
@@ -34,7 +34,7 @@
     "emmet.showAbbreviationSuggestions": false, // 提示取消,但是还是有,不过好多了,         // 学习emmet 就设置true吧
     "emmet.showExpandedAbbreviation": "never", // 不瞎逼提示了,如果是always 各种提示,神烦  // 学习emmet的话,那就打开"makeup"项
     // 5- 起始页 startup -----------------------------------------
-    "workbench.startupEditor": "none", // 起始页啥也不显示
+    // "workbench.startupEditor": "none", // 起始页啥也不显示
     // 6- Editor 代码辅助 ----------------------------------------
     "editor.tabSize": 2, // 这里主要迎合eslint的规范,毕竟有好多插件只认editor,不认eslintrc等配置文件 比如js-html-  stylus格式化插件等等
     "editor.formatOnPaste": true, // 编辑粘贴自动格式化
@@ -56,15 +56,20 @@
     // 10- vetur 配置 --------------------------------------------- 需要安装vetue 等
     "vetur.validation.template": false, // 取消Vetur默认使用 eslint-plugin-vue对template的检测
     // 11- eslint 配置--------------------------------------------- // 需要安装eslint,并npm i eslint // 自动修复简单错误// 和格式化 在缩进上有一些重合
+    // eslint设置
+    "eslint.autoFixOnSave": true, // 保存时自动修复,格式化  和 editor formatonsave,略冲突
     "eslint.validate": [ // 支持eslint的文件 奇怪的是这里设置的autoFix居然不起作用
         "javascript",
         "javascriptreact",
+        {
+            "language": "html",
+            "autoFix": true
+        },
         {
             "language": "vue",
             "autoFix": true
         },
     ],
-    "eslint.autoFixOnSave": true, // 保存时自动修复,格式化  和 editor formatonsave,略冲突
     // 12- prettier 配置 ----------------------------------------- 需要安装prettier  格式化
     "prettier.eslintIntegration": true, // prettier的eslint格式化从eslintrc.js中读取
     "prettier.semi": false, // 不加分号
