@@ -1,1 +1,1 @@
-# VScode-R-Setting
+# VScode-Vue-Setting
